@@ -1,0 +1,195 @@
+$primary-back: #00ABD5;
+$secondary-back: #C4C4C4;
+$facebook-color: #3b5998;
+$google-color: #db4a39;
+
+@mixin flex-proper($direction,$align,$content: null){
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $content;
+}
+@mixin button-decoration{
+  .object-decoration{
+    width: 530px;
+    height: 80px;
+    border-radius: 69px;
+    background: $secondary-back;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+    font-size: 2.5rem;
+  }
+  .input-decoration{
+    width: 500px;
+    height: 80px;
+    border-radius: 69px;
+    background: $secondary-back;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+    font-size: 2rem;
+    padding-left: 5%;
+  }
+}
+@mixin text-decoration($family, $weight, $size, $line){
+  color: black;
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
+}
+
+/*Fonts*/
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Righteous";
+  src: url("../assets/Righteous/Righteous-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  width: 100%;
+  height: auto;
+  min-height: 110vh;
+  @include flex-proper(row,center ,space-between);
+}
+
+.left-side{
+  width: 50%;
+  height: 110vh;
+  background: $primary-back;
+  @include flex-proper(row,center ,center);
+  img{
+    width: 100%;
+  }
+}
+
+.right-side{
+  width: 50%;
+  height: 110vh;
+  @include flex-proper(column,center ,space-around);
+}
+
+.anchor-container{
+  width: 80%;
+  height: 30vh;
+  gap: 15px;
+  @include flex-proper(column,center ,center);
+  @include button-decoration();
+  a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include text-decoration('Roboto',400 ,2.5rem ,42px);
+    p{
+      margin-left: 5px;
+    }
+  }
+  svg{
+    fill: white;
+    transition: 0.8s;
+  }
+  a:hover svg{
+    fill: $facebook-color;
+    transition: 0.8s;
+  }
+  a:hover #g-plus{
+    fill: $google-color;
+    transition: 0.8s;
+  }
+}
+
+.text-center{
+  @include text-decoration('Righteous',10 ,2rem ,5px);
+  margin-bottom: 10px;
+}
+
+.register-account{
+  width: 80%;
+  height: 70vh;
+  @include flex-proper(column,center , space-around);
+  .form-format{
+    @include flex-proper(column,center ,null);
+    @include button-decoration();
+    .label-format{
+      @include text-decoration('Roboto',400 ,2rem ,42px );
+      margin-left: 40px;
+      display: flex;
+      align-self: start;
+    }
+    .check-format{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      @include flex-proper(row,center ,null);
+      label{
+        @include text-decoration('Roboto',400 ,1rem ,40px);
+      }
+      #checkbox{
+        height: 30px;
+        width: 30px;
+        background: $secondary-back;
+        border-radius: 0px;
+        appearance: none;
+        transition: background-color 0.3s ease-in-out;
+      }
+      #checkbox:checked {
+        background-color: rgb(236, 72, 153);
+      }
+      
+      #checkbox:focus {
+        border-color: rgb(80, 67, 250);
+      }
+    }
+    button{
+      width: 540px;
+    }
+    button:hover{
+      cursor: pointer;
+    }
+    p{
+      @include text-decoration('Roboto',400 ,2rem ,40px);
+      a{
+        color: $primary-back;
+        background: white;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 40px;
+      }
+    }
+  }
+}
+/*Media Querys*/
+@media (min-width:300px) and (max-width: 800px){
+  main{
+    @include flex-proper(column,center ,center );
+    min-height: 100vh;
+  }
+  .left-side{
+    width: 100%;
+  }
+  .right-side{
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1700px){
+  main{
+    min-height: 100vh;
+  }
+  .left-side{
+    height: 100vh;
+  }
+  .right-side{
+    height: 80vh;
+  }
+}

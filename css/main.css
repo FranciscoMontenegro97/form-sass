@@ -1,0 +1,234 @@
+/*Fonts*/
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Righteous";
+  src: url("../assets/Righteous/Righteous-Regular.ttf");
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  min-height: 110vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-side {
+  width: 50%;
+  height: 110vh;
+  background: #00ABD5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.left-side img {
+  width: 100%;
+}
+
+.right-side {
+  width: 50%;
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.anchor-container {
+  width: 80%;
+  height: 30vh;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.anchor-container .object-decoration {
+  width: 530px;
+  height: 80px;
+  border-radius: 69px;
+  background: #C4C4C4;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  font-size: 2.5rem;
+}
+.anchor-container .input-decoration {
+  width: 500px;
+  height: 80px;
+  border-radius: 69px;
+  background: #C4C4C4;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  font-size: 2rem;
+  padding-left: 5%;
+}
+.anchor-container a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 42px;
+}
+.anchor-container a p {
+  margin-left: 5px;
+}
+.anchor-container svg {
+  fill: white;
+  transition: 0.8s;
+}
+.anchor-container a:hover svg {
+  fill: #3b5998;
+  transition: 0.8s;
+}
+.anchor-container a:hover #g-plus {
+  fill: #db4a39;
+  transition: 0.8s;
+}
+
+.text-center {
+  color: black;
+  font-family: "Righteous";
+  font-weight: 10;
+  font-size: 2rem;
+  line-height: 5px;
+  margin-bottom: 10px;
+}
+
+.register-account {
+  width: 80%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.register-account .form-format {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register-account .form-format .object-decoration {
+  width: 530px;
+  height: 80px;
+  border-radius: 69px;
+  background: #C4C4C4;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  font-size: 2.5rem;
+}
+.register-account .form-format .input-decoration {
+  width: 500px;
+  height: 80px;
+  border-radius: 69px;
+  background: #C4C4C4;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  font-size: 2rem;
+  padding-left: 5%;
+}
+.register-account .form-format .label-format {
+  color: black;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 42px;
+  margin-left: 40px;
+  display: flex;
+  align-self: start;
+}
+.register-account .form-format .check-format {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.register-account .form-format .check-format label {
+  color: black;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 40px;
+}
+.register-account .form-format .check-format #checkbox {
+  height: 30px;
+  width: 30px;
+  background: #C4C4C4;
+  border-radius: 0px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  transition: background-color 0.3s ease-in-out;
+}
+.register-account .form-format .check-format #checkbox:checked {
+  background-color: rgb(236, 72, 153);
+}
+.register-account .form-format .check-format #checkbox:focus {
+  border-color: rgb(80, 67, 250);
+}
+.register-account .form-format button {
+  width: 540px;
+}
+.register-account .form-format button:hover {
+  cursor: pointer;
+}
+.register-account .form-format p {
+  color: black;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 40px;
+}
+.register-account .form-format p a {
+  color: #00ABD5;
+  background: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 40px;
+}
+
+/*Media Querys*/
+@media (min-width: 300px) and (max-width: 800px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .left-side {
+    width: 100%;
+  }
+  .right-side {
+    height: 80vh;
+  }
+}
+@media (min-width: 1700px) {
+  main {
+    min-height: 100vh;
+  }
+  .left-side {
+    height: 100vh;
+  }
+  .right-side {
+    height: 80vh;
+  }
+}/*# sourceMappingURL=main.css.map */
